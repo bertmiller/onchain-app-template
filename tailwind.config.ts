@@ -12,6 +12,11 @@ const config: Config = {
         xl: '1280px',
       },
     },
+    extend: {
+      backgroundImage: {
+        'dot-pattern': "url('/images/background-dot.svg')",
+      },
+    },
   },
   plugins: [],
 };

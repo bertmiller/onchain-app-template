@@ -33,6 +33,10 @@ html .font-inter {
   font-family: var(--font-inter);
 }
 
+footer {
+  font-family: var(--font-roboto-mono);
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -82,4 +86,9 @@ a {
 
 .templateSection > div {
   max-width: 100%;;
+}
+
+body {
+  background-image: url(/icons/background-dot.svg);
+  background-repeat: repeat;
 }

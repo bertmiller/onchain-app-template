@@ -5,7 +5,7 @@ export default function LoginButton() {
   return (
     <WalletWrapper
       className="min-w-[90px]"
-      text="Log in"
+      text="Connect a wallet"
       withWalletAggregator={true}
     />
   );

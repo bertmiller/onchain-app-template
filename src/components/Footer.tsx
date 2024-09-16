@@ -1,40 +1,41 @@
 'use client';
 
-import {
-  DISCORD_LINK,
-  FIGMA_LINK,
-  GITHUB_LINK,
-  ONCHAINKIT_LINK,
-  TWITTER_LINK,
-} from 'src/links';
+import Image from 'next/image';
+import { ONCHAINKIT_LINK } from 'src/links';
 import ArrowSvg from 'src/svg/ArrowSvg';
 
 const docLinks = [
-  { href: ONCHAINKIT_LINK, title: 'Docs' },
-  { href: GITHUB_LINK, title: 'Github' },
-  { href: DISCORD_LINK, title: 'Discord' },
-  { href: FIGMA_LINK, title: 'Figma' },
-  { href: TWITTER_LINK, title: 'X' },
+  { href: 'https://docs.flashbots.net/', title: 'Refunds docs' },
+  { href: 'https://protect.flashbots.net/', title: 'Protect' },
+  { href: 'https://collective.flashbots.net/', title: 'Forum' },
 ];
 
 export default function Footer() {
   return (
-    <section className="mt-auto mb-2 flex w-full flex-col flex-col-reverse justify-between gap-2 md:mt-8 md:mb-6 md:flex-row">
-      <aside className="flex items-center pt-2 md:pt-0">
-        <h3 className="mr-2 mb-2 text-m md:mb-0">
-          Built with love by{' '}
-          <a
-            href={ONCHAINKIT_LINK}
-            target="_blank"
-            rel="noreferrer"
-            title="OnchainKit"
-            className="font-semibold hover:text-indigo-600"
-          >
-            OnchainKit
-          </a>
-        </h3>
-      </aside>
-      <ul className="mt-4 flex max-w-full flex-col flex-wrap justify-center gap-3 md:mt-0 md:flex-row md:justify-start md:gap-6">
+    <section className="mt-auto mb-2 flex w-full flex-row items-center justify-between gap-4 md:mt-8 md:mb-6">
+      <div className="flex items-center space-x-1">
+        <div>
+            <span>Forked from </span>
+            <a
+              href={ONCHAINKIT_LINK}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold hover:text-indigo-600"
+            >
+              OnchainKit
+            </a>
+        </div>
+        <div className="flex items-center">
+          <span className="mr-2">with love by</span>
+          <Image 
+            src="/icons/flashbots-logo.svg" 
+            alt="Flashbots Logo" 
+            width={100} 
+            height={100} 
+          />
+        </div>
+      </div>
+      <ul className="flex flex-wrap gap-6">
         {docLinks.map(({ href, title }) => (
           <li className="flex" key={href}>
             <a
